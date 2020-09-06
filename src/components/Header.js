@@ -38,7 +38,7 @@ export default function Header() {
 		      	</div>
 		        <ul>
 		            {mainMenuItems.map((item) =>
-		                <li key={item.object_slug}><Link to={"/"+item.url.substr(33)}>{item.title}</Link></li>
+		                <li key={item.object_slug}><Link to={"/"+item.url.substr(32)}>{item.title}</Link></li>
 		            )}
 		        </ul>
 		      </nav>
