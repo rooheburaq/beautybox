@@ -15,6 +15,15 @@ export default function Home() {
 				      node {
 				        acf {
 				          home_banner {
+				          	background_banner{
+				          		localFile {
+				                    childImageSharp {
+				                      original {
+				                        src
+				                      }
+				                    }
+				                }
+				          	}
 				            button
 				            title
 				          }
@@ -87,6 +96,8 @@ export default function Home() {
     const homeACF = homeData.allWordpressPage.edges[0].node.acf;
     const homeServices = homeACF.services_tabs.single_service;
     const testomonialBoxes = homeACF.testimonials.testimonial_box;
+    const homeBanner = homeACF.home_banner.background_banner.localFile.childImageSharp.original.src;
+	console.log(homeBanner);
 	var slidersettings = {
 	      dots: true,
 	      infinite: true,
@@ -97,7 +108,7 @@ export default function Home() {
     return (
         <div>
 	  			<Layout>
-	  				<div className="homeBanner">
+	  				<div className="homeBanner" style={{background:`url(${homeBanner})`}}>
 	  					<div className="container">
 	  						<div dangerouslySetInnerHTML={{__html: homeACF.home_banner.title}}/>
 	  						<Link to={homeACF.home_banner.button}>Check Our Services</Link>
