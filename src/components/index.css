@@ -225,8 +225,10 @@ img {
     padding: 8px;
 }
 .homeBanner{
-    background:url(/static/beautybox-laser-b5bd1b0f813e902c70a767ee0839bd9f.jpg) no-repeat center top / cover;
-    padding:80px 0;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    padding: 80px 0;
 }
 
 .topHeader a{
